@@ -1,0 +1,19 @@
+.errorbox{
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: ease-in-out 400ms;
+}
+.error{
+    color: red;
+    font-size: 16px;
+    font-weight: 500;
+}
+.on{
+    bottom: 1%;
+}
