@@ -20,7 +20,7 @@ export default function Register(){
                 </div>
                 <div className='form-group'>
                     <label htmlFor="birthdate">Date of Birth<span>*</span></label>
-                    <input type="date" name="birthdate" id="birthdate" required min='1965-01-01' max='2004-12-31'/>
+                    <input type="date" name="birthdate" id="birthdate"  required min='1965-01-01' max='2004-12-31'/>
                 </div>
                 <div className='form-group'>
                     <label htmlFor="password">Password<span>*</span></label>
@@ -36,7 +36,7 @@ export default function Register(){
                 </div>
                 <div className='form-group'>
                     <label htmlFor="email">Email<span>*</span></label>
-                    <input type="" name="email" id="email" required pattern='^\w*@[a-z]*.[\w]{2,3}$' placeholder='student@gmail.com' />
+                    <input type="email" name="email" id="email" required pattern='^\w*.*@\w*.[A-z]{2,3}$ ' placeholder='student@gmail.com' />
                 </div>
                 <div className='form-group'>
                     <label htmlFor="age">Age<span>*</span></label>
@@ -46,8 +46,8 @@ export default function Register(){
                     <label htmlFor="gender">Gender<span>*</span></label>
                     <p className='gender-type'>Male</p>
                     <input type="radio" name="gender" id="male"  value={'male'} required/>
-                    <p className='gender-type'>Fimale</p>
-                    <input type="radio" name="gender" id="fimale" value={'fimale'} required/>
+                    <p className='gender-type'>Female</p>
+                    <input type="radio" name="gender" id="female" value={'female'} required/>
                 </div>
                 <div className='form-group'>
                   <p className='upload-title'>Student Image</p>

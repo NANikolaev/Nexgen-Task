@@ -1,5 +1,5 @@
 
-const bin = `1671380026195-2145520423073`
+const bin = `1671463791257-9716832768172`
 const url = `https://www.toptal.com/developers/postbin/${bin}`
 
 export const onChange = (setState, e) => {
@@ -23,12 +23,12 @@ export const registerUser = (e, state) => {
         return state(true)
     }
     delete student['re-pass']
-
+   
      fetch(url,{
-        method: "POST",
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        method:"POST",
+        mode:'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
         body:JSON.stringify(student)
-    }  )
-     .then(res=>console.log(res))
+    } )
+     .then(res=>e.target.reset())
 };
