@@ -1,3 +1,4 @@
+import scrollreveal from "scrollreveal";
 
 const bin = `1671463791257-9716832768172`
 const url = `https://www.toptal.com/developers/postbin/${bin}`
@@ -23,12 +24,25 @@ export const registerUser = (e, state) => {
         return state(true)
     }
     delete student['re-pass']
-   
-     fetch(url,{
-        method:"POST",
-        mode:'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-        body:JSON.stringify(student)
-    } )
-     .then(res=>e.target.reset())
+
+    fetch(url, {
+        method: "POST",
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: JSON.stringify(student)
+    })
+        .then(res => e.target.reset())
+};
+
+export const scrollReveal = (direction,distance, duration, elements) => {
+
+    const sr = scrollreveal({
+        origin: direction,
+        distance: distance,
+        duration: duration,
+        reset: false,
+    });
+    return sr.reveal(elements)
+
+
 };
