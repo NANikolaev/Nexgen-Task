@@ -20,8 +20,8 @@ export default function Register(){
              <h2 className='register-title'>Student Registration</h2>
              <form className='student-form' onSubmit={(e)=>registerUser(e,setError)}>
                 <div className='form-group left'>
-                    <label htmlFor="fullname">Full Name<span>*</span></label>
-                    <input type="text" name="fullname" id="fullname"  required pattern='[A-z]{2,} [A-z]{2,}' placeholder='Firstname Lastname'/>
+                    <label htmlFor="fullname">Name<span>*</span></label>
+                    <input type="text" name="name" id="fullname"  required pattern='[A-z]{2,} [A-z]{2,}' placeholder='First and last name'/>
                 </div>
                 <div className='form-group right'>
                     <label htmlFor="birthdate">Date of Birth<span>*</span></label>
