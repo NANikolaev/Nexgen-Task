@@ -41,7 +41,7 @@ export default function Register(){
                 </div>
                 <div className='form-group right'>
                     <label htmlFor="email">Email<span>*</span></label>
-                    <input type="email" name="email" id="email" required pattern='^\w*.*@\w*.[A-z]{2,3}$ ' placeholder='student@gmail.com' />
+                    <input type="email" name="email" id="email" required pattern='^\w*.*@\w*.[A-z]{2,3}$' placeholder='student@gmail.com' />
                 </div>
                 <div className='form-group left'>
                     <label htmlFor="age">Age<span>*</span></label>
