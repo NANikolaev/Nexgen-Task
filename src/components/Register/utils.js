@@ -6,7 +6,7 @@ const url = `https://www.toptal.com/developers/postbin/${bin}`
 export const onChange = (setState, e) => {
     {
         e.target.files[0]
-            ? setState(e.target.files[0])
+            ? setState(URL.createObjectURL(e.target.files[0]))
             : setState("")
     }
 };

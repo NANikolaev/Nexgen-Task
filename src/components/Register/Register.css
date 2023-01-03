@@ -10,11 +10,31 @@
     background-color: rgb(247 247 247 / 21%);
     border-radius: 5px;
 }
-
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .register-title {
+    display: inline-block;
     font-size: 36px;
     color: #fff;
     margin-bottom: 20px;
+}
+.profile-image{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.student-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-image: url(/public/images/free-user-icon-3296-thumb.png); 
+    background-size: cover;
+    outline: auto;
 }
 
 .student-form {
