@@ -35,6 +35,7 @@
     background-image: url(/public/images/free-user-icon-3296-thumb.png); 
     background-size: cover;
     outline: auto;
+    object-fit: cover;   
 }
 
 .student-form {
