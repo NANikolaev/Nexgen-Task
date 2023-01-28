@@ -1,7 +1,8 @@
-
+import { ErrProps } from "../../interfaces";
 import "./Error.css";
 
-export const Error = ({ text, state, set }) => {
+
+export const Error:React.FC<ErrProps> = ({ text, state, set }) => {
 
     function timeOut() {
         if (state) {

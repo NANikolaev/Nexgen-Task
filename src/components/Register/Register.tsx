@@ -1,19 +1,23 @@
 import './Register.css';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect} from 'react';
 import { Error } from '../Error/Error';
 
-import { onChange, onClick, registerUser, scrollReveal } from './utils';
+import { onChange, onClick, registerUser,scrollReveal} from './utils';
 
-export default function Register() {
-    const [file, setFile] = useState('');
-    const [error, setError] = useState(false);
-    const inputFile = useRef(null);
+
+
+export const Register:React.FC=()=> {
+    const [file, setFile] = useState<string>('');
+    const [error, setError] = useState<boolean>(false);
+    const inputFile = useRef<HTMLInputElement>(null);
     useEffect(() => {
-        scrollReveal('bottom', '90px', 1000, '.register');
-        scrollReveal('left', '400px', 2000, '.left');
-        scrollReveal('right', '400px', 2000, '.right')
-        scrollReveal('bottom', '400px', 2000, '.bottom')
+        scrollReveal({direction:'bottom', distance:'90px',duration:1000, elements:'.register'});
+        scrollReveal({direction:'left', distance:'400px',duration:2000, elements:'.left'});
+        scrollReveal({direction:'right',distance:'400px',duration:2000, elements:'.right'})
+        scrollReveal({direction:'bottom',distance:'400px',duration:2000, elements:'.bottom'})
     }, [])
+
+
 
     return (
         <div className='register'>
@@ -23,7 +27,7 @@ export default function Register() {
                     <img className='student-image' src={file} />
                 </div>
             </div>
-            <form className='student-form' onSubmit={(e) => registerUser(e, setError)}>
+            <form className='student-form' onSubmit={(e)=>registerUser(e,setError)}>
                 <div className='form-group left'>
                     <label htmlFor="fullname">Name<span>*</span></label>
                     <input type="text" name="name" id="fullname" required pattern='[A-z]{2,} [A-z]{2,}' placeholder='First and Last name' />
@@ -37,8 +41,8 @@ export default function Register() {
                     <input type="password" name="password" id="password" required minLength={8} placeholder="********" />
                 </div>
                 <div className='form-group right'>
-                    <label htmlFor="re-pass">Repeat Password<span>*</span></label>
-                    <input type="password" name="re-pass" id="re-pass" required placeholder='********' />
+                    <label htmlFor="rePass">Repeat Password<span>*</span></label>
+                    <input type="password" name="rePass" id="rePass" required placeholder='********' />
                 </div>
                 <div className='form-group left'>
                     <label htmlFor="phone">Tel/Mobile<span>*</span></label>
@@ -50,7 +54,7 @@ export default function Register() {
                 </div>
                 <div className='form-group left'>
                     <label htmlFor="age">Age<span>*</span></label>
-                    <input type="number" name="age" id="age" required min={18} max={50} step="none" />
+                    <input type="number" name="age" id="age" required min={18} max={50} step="none" placeholder='18' />
                 </div>
                 <div className='form-group right'>
                     <label htmlFor="gender">Gender<span>*</span></label>
@@ -62,8 +66,7 @@ export default function Register() {
                 <div className='form-group bottom'>
                     <p className='upload-title'>Student Image</p>
                     <button className='btn btn-up' onClick={(e) => onClick(inputFile, e)}>Upload File</button>
-                    <input onChange={(e) => onChange(setFile, e)} type="file" ref={inputFile} id="up-file" />
-                    <p className='filename'>{file.name}</p>
+                    <input onChange={(e) => onChange(setFile, e)} name='image' type="file" ref={inputFile} id="up-file" />
                 </div>
                 <div className='form-group bottom'>
                     <label htmlFor="description">In a few sentences,write down why you want to become a student of our College.<span>*</span></label>
@@ -75,11 +78,11 @@ export default function Register() {
                 </div>
                 <div className='form-group bottom'>
                     <input type="submit" className='btn btn-sub' value="Register" />
-                    <input type="reset" className="btn btn-res" value="Reset" />
+                    <input type="reset" className="btn btn-res" value="Reset" onClick={()=>setFile('')} />
                 </div>
             </form>
             <Error text={"Password don`t match.Try again."} state={error} set={setError} />
         </div>
     )
-
+    
 }
