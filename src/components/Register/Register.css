@@ -1,54 +1,54 @@
-::-webkit-scrollbar{
-    display: none;
-}
 .register {
     overflow: hidden;
-    margin: 0 auto;
-    position: absolute;
-    padding: 2%;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%);
-    width: 40%;
+    margin: 0 auto;   
+    padding: 2%;  
+    width: 100%;
+    max-width: 750px;
     background-color: rgb(247 247 247 / 21%);
     border-radius: 5px;
 }
-.info{
+
+.info {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .register-title {
     display: inline-block;
+    text-align: center;
     font-size: 36px;
     color: #fff;
     margin-bottom: 20px;
 }
-.profile-image{
-    display: inline-block;
+
+.profile-image {
+    display: none;
     width: 150px;
     height: 150px;
     overflow: hidden;
     border-radius: 100%;
 }
-.student-image{
+
+.student-image {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    background-image: url(/public/images/free-user-icon-3296-thumb.png); 
+    background-image: url(/public/images/free-user-icon-3296-thumb.png);
     background-size: cover;
     outline: auto;
-    object-fit: cover;   
+    object-fit: cover;
 }
 
 .student-form {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 6%;
 }
 
 .form-group {
-    width: 47%;
+    width: 100%;
     display: grid;
     margin-bottom: 20px;
 }
@@ -192,4 +192,52 @@ input[type="file"] {
 .btn-res:hover {
     box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.71);
     transform: scale(1.05);
+}
+
+@media screen and (min-width:425px) {
+    .register-title {
+        width: min-content;
+    }
+
+    .profile-image {
+        display: inline-block;
+        width: 125px;
+        height: 125px;
+    }
+
+    .student-form {
+        flex-direction: row;
+    }
+
+    .form-group {
+        width: 47%;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .register-title {
+        width: unset;
+        font-size: 38px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width:750px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width:950px) {
+    .register{
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%);
+    }
 }
